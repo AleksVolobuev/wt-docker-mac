@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  mssql:
+    image: $MSSQL_IMAGE
+    container_name: mssql
+    hostname: mssql
+    user: root
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=$MSSQL_SA_PASSWORD
+      - MSSQL_SA_PASSWORD=$MSSQL_SA_PASSWORD
+    ports:
+      - $MSSQL_HOST_PORT:$MSSQL_CONTAINER_PORT
+    networks:
+      - webtutor
+  wt:
+    image: $WEBTUTOR_IMAGE
+    container_name: wt
+    hostname: wt
+    platform: linux/amd64
+    entrypoint: ./xhttp.out
+    volumes:
+     - ./webtutor/wt_data:/WebsoftServer/wt_data
+     - ./webtutor/wt/web/webtutor:/WebsoftServer/wt/web/webtutor
+     - ./webtutor/Logs:/WebsoftServer/Logs
+     - ./webtutor/ft-idx:/WebsoftServer/ft-idx
+     - ./webtutor/applications:/WebsoftServer/applications
+     - ./webtutor/xHttp.ini:/WebsoftServer/xHttp.ini
+     - ./webtutor/spxml_unibridge_config.xml:/WebsoftServer/spxml_unibridge_config.xml
+    ports:
+      - $WEBTUTOR_HOST_PORT:$WEBTUTOR_CONTAINER_PORT
+    depends_on:
+      - mssql
+    networks:
+      - webtutor
+
+networks:
+  webtutor:
+    driver: bridge

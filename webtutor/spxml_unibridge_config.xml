@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <add key="LogDirectory" value="Logs" />
+    <add key="LookFailedUrlsOnDisk" value="true" />
+    <add key="FetchBackFoundUrlsOnDisk" value="true" />
+    <add key="SharedConnection" value="false" />
+    <add key="ConnectionString" value="" />
+    <add key="DBType" value="" />
+    <add key="Username" value="" />
+    <add key="Password" value="" />
+    <add key="Database" value="" />
+    <add key="TrashDatabase" value="trash" />
+    <add key="Mode" value="Normal" />
+    <add key="DateFormat" value="dmy" />
+    <add key="Schema" value="" />
+    <!-- tuning start -->
+    <add key="XmlPrimaryIndex" value="false" />
+    <add key="XmlSecondaryIndex" value="false" />
+    <!-- tuning end -->
+    <add key="PreventNonIndexOrder" value="false" />
+    <add key="SqlInjection" value="true" />
+    <add key="ProviderInfo" value="false" />
+    <add key="ProviderManagement" value="false" />
+    <add key="MaxActiveRequests" value="30" />
+    <add key="EventTimeout" value="-1" />
+    <add key="PassAfterEventTimeout" value="true" />
+    <add key="LocalObjectCache" value="false" />
+    <add key="LocalFileCache" value="false" />
+    <add key="XQueryTemplateCache" value="true" />
+    <add key="LinkedCatalogsSchemaDeletions" value="true" />
+    <add key="AsyncCatalogProcessing" value="false" />
+    <add key="AutomaticSyncCatalog" value="false" />
+    <add key="UpgradeLocked" value="false" />
+    <add key="Collation" value="" />
+    <add key="LuceneFTIndex" value="false" />
+	<add key="LuceneFTIndexBlobs" value="false" />
+    <add key="LuceneFTAnalyzerSpecialChars" value="./-_\~':;,?#@!$%^&amp;*()+=|[]{}&gt;&lt;&quot;" />
+	<add key="MaxFTDocs" value="5000" />
+    <add key="SharedFTDirectory" value="/WebsoftServer/ft-idx/" />
+    <add key="SharedFTDirectory" value="" />
+    <add key="CacheDebug" value="false" />
+    <add key="ProviderDebugLog" value="false" />
+    <add key="AgentManager" value="false" />
+    <add key="InProcessMasterAgentManager" value="true" />
+    <add key="MasterAgentManager" value="true" />
+    <add key="AgentManagerMaxWorkers" value="1" />
+  </appSettings>
+</configuration>
